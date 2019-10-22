@@ -1,0 +1,85 @@
+False	class	finally	is	return
+None	continue	for	lambda	try
+True	def	from	nonlocal	while
+and	del	global	not	with
+as	elif	if	or	yield
+assert	else	import	pass	 
+break	except	in	raise
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+car.clear()
+
+print(car)
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+x = car.setdefault("model", "Bronco")
+
+print(x)
+x = ('key1', 'key2', 'key3')
+y = 0
+
+thisdict = dict.fromkeys(x, y)
+
+print(thisdict)
+i = 1
+while i < 6:
+  print(i)
+  i += 1
+
+$ # Set PYTHONPATH to path to the working directory + /code
+$ # This is for the "bash" shell on Unix / git bash on Windows
+$ export PYTHONPATH="$PWD/code"
+$ # Now the script can find "a_module"
+$ python3 scripts/a_script.py
+Running useful function
+
+[dbox@fermicloud326 jobsub]$ echo $PYTHONPATH
+
+[dbox@fermicloud326 jobsub]$ ls
+client  doc           lib          packaging  test
+config  jobsub_tools  LICENSE.txt  server     ups_jobsub_client
+[dbox@fermicloud326 jobsub]$ ls client/
+ca-bundle.crt               jobsub_fetchlog.py  jobsub_rm.py
+constants.py                jobsub_history.py   jobsub_submit.py
+defaultServer.py            jobsub_hold.py      jobsubUtils.py
+__init__.py                 jobsub_q.py         logSupport.py
+jobsubClientCredentials.py  jobsub_release.py   requirements.txt
+jobsubClient.py             jobsub_remote.sh    subprocessSupport.py
+[dbox@fermicloud326 jobsub]$ export PYTHONPATH=`pwd`/client
+[dbox@fermicloud326 jobsub]$ echo $PYTHONPATH
+/cloud/login/dbox/git/jobsub/client
+
+export PYTHONSTARTUP=$HOME/.pythonstartup
+import rlcompleter
+import readline
+
+readline.parse_and_bind("tab: complete")
+
+import readline
+import rlcompleter
+import atexit
+import os
+# tab completion
+readline.parse_and_bind('tab: complete')
+# history file
+histfile = os.path.join(os.environ['HOME'], '.pythonhistory')
+try:
+    readline.read_history_file(histfile)
+except IOError:
+    pass
+atexit.register(readline.write_history_file, histfile)
+del os, histfile, readline, rlcompleter
+
+Python 2.7.6 (default, Nov 23 2017, 15:49:48)
+[GCC 4.8.4] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+how_use_pythonstartup
+>>>
